@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korpa — PIKO</title>
+  <meta name="description" content="Tvoja PIKO korpa.">
+  <link rel="icon" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="curtain" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo"><svg viewBox="0 0 24 24"><path d="M14 2 4 14h7l-2 8 11-13h-7l1-7Z"/></svg>PIKO</a>
+      <nav class="menu">
+        <a href="index.html" style="--i:0"><small>01</small>Početna</a>
+        <a href="shop.html" style="--i:1"><small>02</small>Prodavnica</a>
+        <a href="about.html" style="--i:2"><small>03</small>O nama</a>
+        <a href="contact.html" style="--i:3"><small>04</small>Kontakt</a>
+        <div class="menu-foot"><span>zdravo@piko.rs</span><span>Beograd, Srbija</span></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="shop.html#pretraga" class="icon-btn" aria-label="Pretraga"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+        <a href="cart.html" class="icon-btn cart-link active" aria-label="Korpa"><svg class="i" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count">0</span></a>
+        <button class="burger" aria-label="Meni"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero small">
+      <div class="container">
+        <nav class="crumbs"><a href="index.html">Početna</a><span>/</span><b>Korpa</b></nav>
+        <h1 class="page-title"><span class="line"><span style="--d:.4s">Tvoja <em>korpa</em></span></span></h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cart-grid" id="cartWrap">
+        <div>
+          <div class="ship-bar">
+            <p id="shipText"></p>
+            <div class="bar"><i id="shipFill"></i></div>
+          </div>
+          <ul class="cart-list intro" id="cartList"></ul>
+        </div>
+
+        <aside class="summary">
+          <h3>Pregled narudžbe</h3>
+          <dl>
+            <div><dt>Međuzbir</dt><dd id="sub"></dd></div>
+            <div><dt>Dostava</dt><dd id="ship"></dd></div>
+            <div class="disc" id="discRow" hidden><dt>Popust PIKO10</dt><dd id="disc"></dd></div>
+            <div class="total"><dt>Ukupno</dt><dd id="total"></dd></div>
+          </dl>
+          <form class="promo" id="promo">
+            <input id="code" placeholder="Promo kod" aria-label="Promo kod">
+            <button>Primijeni</button>
+          </form>
+          <button class="btn btn-primary full" id="checkout">Završi kupovinu <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="hint">Probaj kod PIKO10 · Sigurno plaćanje</p>
+        </aside>
+      </div>
+
+      <div class="container empty-state" id="emptyCart" hidden>
+        <div class="empty-shoe floaty" data-shoe="7"></div>
+        <h2>Korpa je <em>prazna</em></h2>
+        <p>Tvoj sljedeći par te čeka u prodavnici.</p>
+        <a href="shop.html" class="btn btn-primary">Idi u prodavnicu <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Zatvori">×</button>
+      <svg class="check" viewBox="0 0 96 96"><circle cx="48" cy="48" r="48"/><path d="m30 49 12 12 24-25"/></svg>
+      <h3>Hvala na <em>kupovini</em>!</h3>
+      <p>Narudžba <b id="orderNo"></b> je primljena. Poslaćemo ti potvrdu na e-mail.</p>
+      <a href="shop.html" class="btn btn-primary">Nastavi kupovinu</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><svg viewBox="0 0 24 24"><path d="M14 2 4 14h7l-2 8 11-13h-7l1-7Z"/></svg>PIKO</a>
+        <p>Patike dizajnirane za brzinu, napravljene za ulicu. Prijavi se i prvi saznaj za novi drop.</p>
+        <form class="newsletter"><input type="email" placeholder="Tvoj e-mail" aria-label="E-mail" required><button>Prijavi se</button></form>
+      </div>
+      <div class="footer-col">
+        <h4>Prodavnica</h4>
+        <a href="shop.html?cat=trcanje">Trčanje</a>
+        <a href="shop.html?cat=lifestyle">Lifestyle</a>
+        <a href="shop.html?cat=kosarka">Košarka</a>
+        <a href="shop.html">Sve patike</a>
+      </div>
+      <div class="footer-col">
+        <h4>PIKO</h4>
+        <a href="about.html">O nama</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="cart.html">Korpa</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="mailto:zdravo@piko.rs">zdravo@piko.rs</a>
+        <a href="tel:+381111234567">+381 11 123 4567</a>
+        <span>Beograd, Srbija</span>
+        <div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="TikTok">TT</a><a href="#" aria-label="YouTube">YT</a></div>
+      </div>
+    </div>
+    <div class="footer-big" aria-hidden="true">PIKO</div>
+    <div class="container footer-bottom"><span>© 2026 PIKO. Sva prava zadržana.</span><span>Dizajnirano za brzinu ⚡</span></div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

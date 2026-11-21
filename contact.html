@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — PIKO</title>
+  <meta name="description" content="Kontaktiraj PIKO tim — pitanja o narudžbi, veličinama i saradnji.">
+  <link rel="icon" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="curtain" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo"><svg viewBox="0 0 24 24"><path d="M14 2 4 14h7l-2 8 11-13h-7l1-7Z"/></svg>PIKO</a>
+      <nav class="menu">
+        <a href="index.html" style="--i:0"><small>01</small>Početna</a>
+        <a href="shop.html" style="--i:1"><small>02</small>Prodavnica</a>
+        <a href="about.html" style="--i:2"><small>03</small>O nama</a>
+        <a href="contact.html" class="active" style="--i:3"><small>04</small>Kontakt</a>
+        <div class="menu-foot"><span>zdravo@piko.rs</span><span>Beograd, Srbija</span></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="shop.html#pretraga" class="icon-btn" aria-label="Pretraga"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+        <a href="cart.html" class="icon-btn cart-link" aria-label="Korpa"><svg class="i" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count">0</span></a>
+        <button class="burger" aria-label="Meni"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="crumbs"><a href="index.html">Početna</a><span>/</span><b>Kontakt</b></nav>
+        <h1 class="page-title">
+          <span class="line"><span style="--d:.4s">Javi</span></span>
+          <span class="line"><span style="--d:.52s"><em>se</em> nama</span></span>
+        </h1>
+        <p>Pitanje o veličini, narudžbi ili saradnji? Naš tim odgovara brže nego što ti treba da istrčiš krug.</p>
+      </div>
+      <div class="page-hero-shoe floaty" data-shoe="4"></div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-list" data-stagger>
+          <div class="contact-item" style="--i:0">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><small>Prodavnica</small><b>Knez Mihailova 12, Beograd</b></div>
+          </div>
+          <a href="tel:+381111234567" class="contact-item" style="--i:1">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+            <div><small>Telefon</small><b>+381 11 123 4567</b></div>
+          </a>
+          <a href="mailto:zdravo@piko.rs" class="contact-item" style="--i:2">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <div><small>E-mail</small><b>zdravo@piko.rs</b></div>
+          </a>
+          <div class="contact-item" style="--i:3">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><small>Radno vrijeme</small><b>Pon–Sub, 09–21h</b></div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-reveal novalidate>
+          <h2>Pošalji <em>poruku</em></h2>
+          <div class="form-row">
+            <label class="field"><input name="name" placeholder=" " autocomplete="name"><span>Ime i prezime</span><small></small></label>
+            <label class="field"><input name="email" type="email" placeholder=" " autocomplete="email"><span>E-mail</span><small></small></label>
+          </div>
+          <label class="field">
+            <select name="topic">
+              <option>Pitanje o narudžbi</option>
+              <option>Povrat i zamjena</option>
+              <option>Veličine</option>
+              <option>Saradnja</option>
+            </select>
+            <span>Tema</span>
+          </label>
+          <label class="field"><textarea name="message" rows="5" placeholder=" "></textarea><span>Poruka</span><small></small></label>
+          <button class="btn btn-primary">Pošalji poruku <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+
+          <div class="sent-msg">
+            <svg class="check" viewBox="0 0 96 96"><circle cx="48" cy="48" r="48"/><path d="m30 49 12 12 24-25"/></svg>
+            <h3>Poruka je <em>poslata</em></h3>
+            <p>Odgovaramo u roku od 24 sata.</p>
+            <button type="button" class="btn btn-ghost" id="again">Nova poruka</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section flush">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <div>
+            <span class="eyebrow">Česta pitanja</span>
+            <h2>Imaš <em>pitanje?</em></h2>
+          </div>
+        </div>
+        <div class="faq" data-reveal>
+          <details><summary>Koliko traje dostava?</summary><p>Dostava na teritoriji Srbije traje 1–2 radna dana, a za region 2–4 radna dana.</p></details>
+          <details><summary>Kako da vratim ili zamijenim patike?</summary><p>Imaš 30 dana za besplatan povrat ili zamjenu. Samo nam piši i poslaćemo kurira na tvoju adresu.</p></details>
+          <details><summary>Koju veličinu da izaberem?</summary><p>Naši modeli prate standardne EU veličine. Ako si između dvije, preporučujemo veću.</p></details>
+          <details><summary>Koji su načini plaćanja?</summary><p>Prihvatamo sve platne kartice, kao i plaćanje pouzećem prilikom preuzimanja.</p></details>
+          <details><summary>Da li imate poklon kartice?</summary><p>Da — poklon kartice od 25 €, 50 € i 100 € možeš kupiti u našoj prodavnici u Beogradu.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><svg viewBox="0 0 24 24"><path d="M14 2 4 14h7l-2 8 11-13h-7l1-7Z"/></svg>PIKO</a>
+        <p>Patike dizajnirane za brzinu, napravljene za ulicu. Prijavi se i prvi saznaj za novi drop.</p>
+        <form class="newsletter"><input type="email" placeholder="Tvoj e-mail" aria-label="E-mail" required><button>Prijavi se</button></form>
+      </div>
+      <div class="footer-col">
+        <h4>Prodavnica</h4>
+        <a href="shop.html?cat=trcanje">Trčanje</a>
+        <a href="shop.html?cat=lifestyle">Lifestyle</a>
+        <a href="shop.html?cat=kosarka">Košarka</a>
+        <a href="shop.html">Sve patike</a>
+      </div>
+      <div class="footer-col">
+        <h4>PIKO</h4>
+        <a href="about.html">O nama</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="cart.html">Korpa</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="mailto:zdravo@piko.rs">zdravo@piko.rs</a>
+        <a href="tel:+381111234567">+381 11 123 4567</a>
+        <span>Beograd, Srbija</span>
+        <div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="TikTok">TT</a><a href="#" aria-label="YouTube">YT</a></div>
+      </div>
+    </div>
+    <div class="footer-big" aria-hidden="true">PIKO</div>
+    <div class="container footer-bottom"><span>© 2026 PIKO. Sva prava zadržana.</span><span>Dizajnirano za brzinu ⚡</span></div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

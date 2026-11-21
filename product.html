@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model — PIKO</title>
+  <meta name="description" content="Detalji PIKO modela: boje, veličine i tehnologija.">
+  <link rel="icon" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="curtain" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo"><svg viewBox="0 0 24 24"><path d="M14 2 4 14h7l-2 8 11-13h-7l1-7Z"/></svg>PIKO</a>
+      <nav class="menu">
+        <a href="index.html" style="--i:0"><small>01</small>Početna</a>
+        <a href="shop.html" class="active" style="--i:1"><small>02</small>Prodavnica</a>
+        <a href="about.html" style="--i:2"><small>03</small>O nama</a>
+        <a href="contact.html" style="--i:3"><small>04</small>Kontakt</a>
+        <div class="menu-foot"><span>zdravo@piko.rs</span><span>Beograd, Srbija</span></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="shop.html#pretraga" class="icon-btn" aria-label="Pretraga"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+        <a href="cart.html" class="icon-btn cart-link" aria-label="Korpa"><svg class="i" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count">0</span></a>
+        <button class="burger" aria-label="Meni"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="product">
+      <div class="container">
+        <nav class="crumbs"><a href="index.html">Početna</a><span>/</span><a href="shop.html">Prodavnica</a><span>/</span><b id="crumb"></b></nav>
+        <div class="product-grid">
+          <div class="stage" id="stage">
+            <span class="stage-text" id="stageText" aria-hidden="true"></span>
+            <div class="stage-blob"></div>
+            <div class="stage-shoe floaty" id="stageShoe"></div>
+            <div class="stage-badges"><span id="weight"></span><span>VoltFoam</span><span>GripX đon</span></div>
+          </div>
+
+          <div class="info">
+            <span class="tag" id="tag"></span>
+            <span class="card-cat" id="cat"></span>
+            <h1 id="name"></h1>
+            <div class="rating" id="rating"></div>
+            <div class="info-price" id="price"></div>
+            <p id="desc"></p>
+
+            <div class="opt">
+              <div class="opt-head"><b>Boja</b><span id="colorName"></span></div>
+              <div class="swatch-row" id="swatches"></div>
+            </div>
+
+            <div class="opt">
+              <div class="opt-head"><b>Veličina (EU)</b><span>Precrtane nisu dostupne</span></div>
+              <div class="sizes" id="sizes"></div>
+            </div>
+
+            <div class="buy">
+              <div class="qty" id="qtyBox"><button data-q="-1" aria-label="Manje">−</button><span id="qty">1</span><button data-q="1" aria-label="Više">+</button></div>
+              <button class="btn btn-primary" id="add">Dodaj u korpu <svg class="i" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></button>
+              <button class="icon-btn wish" id="wish" aria-label="Lista želja"><svg class="i" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/></svg></button>
+            </div>
+
+            <ul class="perks-mini">
+              <li>Besplatna dostava iznad 100 €</li>
+              <li>30 dana za povrat</li>
+              <li>Garancija 2 godine</li>
+            </ul>
+
+            <div class="acc">
+              <details open><summary>Detalji modela</summary><p id="details"></p></details>
+              <details><summary>Vodič za veličine</summary><p>PIKO modeli odgovaraju standardnim EU veličinama. Ako si između dvije veličine, izaberi veću — posebno za trčanje na duže staze.</p></details>
+              <details><summary>Dostava i povrat</summary><p>Dostava traje 1–3 radna dana. Povrat je besplatan u roku od 30 dana, uz neoštećenu kutiju i etikete.</p></details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Preporuka</span>
+            <h2>Možda ti se <em>svidi</em></h2>
+          </div>
+          <a href="shop.html" class="link-arrow">Sve patike <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="grid" id="related" data-stagger></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><svg viewBox="0 0 24 24"><path d="M14 2 4 14h7l-2 8 11-13h-7l1-7Z"/></svg>PIKO</a>
+        <p>Patike dizajnirane za brzinu, napravljene za ulicu. Prijavi se i prvi saznaj za novi drop.</p>
+        <form class="newsletter"><input type="email" placeholder="Tvoj e-mail" aria-label="E-mail" required><button>Prijavi se</button></form>
+      </div>
+      <div class="footer-col">
+        <h4>Prodavnica</h4>
+        <a href="shop.html?cat=trcanje">Trčanje</a>
+        <a href="shop.html?cat=lifestyle">Lifestyle</a>
+        <a href="shop.html?cat=kosarka">Košarka</a>
+        <a href="shop.html">Sve patike</a>
+      </div>
+      <div class="footer-col">
+        <h4>PIKO</h4>
+        <a href="about.html">O nama</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="cart.html">Korpa</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="mailto:zdravo@piko.rs">zdravo@piko.rs</a>
+        <a href="tel:+381111234567">+381 11 123 4567</a>
+        <span>Beograd, Srbija</span>
+        <div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="TikTok">TT</a><a href="#" aria-label="YouTube">YT</a></div>
+      </div>
+    </div>
+    <div class="footer-big" aria-hidden="true">PIKO</div>
+    <div class="container footer-bottom"><span>© 2026 PIKO. Sva prava zadržana.</span><span>Dizajnirano za brzinu ⚡</span></div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>
